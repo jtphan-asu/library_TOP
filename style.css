@@ -17,3 +17,13 @@ h1{
     background-image: linear-gradient(left, #88c7ff, #88c7ff 2%, transparent 2%, transparent 100%);
     background-image: -webkit-linear-gradient(left, #88c7ff, #88c7ff 2%, transparent 2%, transparent 100%)  
 }
+
+form {
+    /* Center the form on the page */
+    margin: 0 auto 0 auto;
+    width: 500px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }

@@ -7,15 +7,42 @@
     <title>Library</title>
 
     <link rel="stylesheet" href="./style.css">
-    <script src="./library.js"></script>
+    
     
 </head>
 <body>
     <h1>Library</h1>
 
     <p id="books"></p>
-    <button onClick="printLibrary()";>Show Books</button>
-
+    <button onClick="printLibrary()";>Show Books</button><br><br>
+ 
+            <form id="contact-form">
     
+                <div class="form-control">
+                    <label for="name">Author</label>
+                    <input id="name" name="name" type="text" /><br>
+
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text" /><br>
+
+                    <label for="numberPages">Number of Pages</label>
+                    <input id="numberPages" name="numberPages" type="text" /><br>
+                </div>
+    
+                <button class="btn" type="submit">Add Book</button>
+            </form>
+        </div>
+        <div class="output">
+            
+            <pre class="output-pre"></pre>
+        </div>
+    
+    
+
+    <button id="btn" onClick="newBookForm()">Show/Hide Form</button>
+    
+    </div>
+   
+    <script src="./library.js"></script>
 </body>
 </html>

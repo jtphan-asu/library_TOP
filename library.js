@@ -1,3 +1,6 @@
+        //*** Author: Jonathan Phan
+        //*** Github: jtphan-asu 
+        
         //Initialize empty array as data structure.
         let myLibrary = [];
 
@@ -17,8 +20,8 @@
         function addBookToLibrary (obj) {
             myLibrary.push(obj);
         }
-        addBookToLibrary(harryPotter);
-        addBookToLibrary(shrek);
+        //addBookToLibrary(harryPotter);
+        //addBookToLibrary(shrek);
         
         //Iterate through data structure to print contents
         function printLibrary(){
@@ -27,6 +30,43 @@
                
             }
         }
+
+        function newBookForm(){
+            const x = document.getElementById('contact-form');
+            if(x.style.display === 'none'){
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+
+        }
+
+        //Create Form variable
+        const form = document.getElementById("contact-form");
+
+        //On submit event listener
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+        
+            const myFormData = new FormData(e.target);
+        
+            const formDataObj = Object.fromEntries(myFormData.entries());
+        
+            
+            console.log(formDataObj);
+        
+            // output data
+            const output = document.querySelector(".output-pre");
+            output.innerText = JSON.stringify(formDataObj, null, 2);
+
+            //Add Object to myLibrary array
+            addBookToLibrary(formDataObj);
+        });
+        
+           
+
+           
+   
         
         
         
