@@ -27,3 +27,19 @@ form {
     border: 1px solid #CCC;
     border-radius: 1em;
   }
+
+  .tableContainer{
+    background-color: rgb(255, 255, 255);
+    width: 44%;
+    height: 180px;
+    margin: 0 10px 20px 0;
+    border-radius: 20px;
+    min-width: 265px;
+    box-shadow: 0px 2px 3px rgb(175, 175, 175);
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(left, #88c7ff, #88c7ff 2%, transparent 2%, transparent 100%);
+    background-image: -webkit-linear-gradient(left, #88c7ff, #88c7ff 2%, transparent 2%, transparent 100%)  
+  }

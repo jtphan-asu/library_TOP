@@ -5,10 +5,10 @@
         let myLibrary = [];
 
         //Constructor for Book object
-        function Book (title, author, numberOfPages) {
+        function Book (title, author, numberPages) {
             this.title = title;
             this.author = author;
-            this.numberOfPages = numberOfPages;
+            this.numberPages = numberPages;
         
         }
         //New instance of Object
@@ -20,9 +20,14 @@
         function addBookToLibrary (obj) {
             myLibrary.push(obj);
         }
-        //addBookToLibrary(harryPotter);
-        //addBookToLibrary(shrek);
+        addBookToLibrary(harryPotter);
+        addBookToLibrary(shrek);
         
+        //Delete Book
+        function deleteBook(obj) {
+            myLibrary.slice(obj, obj + 1);
+        }
+
         //Iterate through data structure to print contents
         function printLibrary(){
             for(var i = 0; i < myLibrary.length; i++){
@@ -41,9 +46,25 @@
 
         }
 
+        function addRow(obj){
+            var table = document.getElementById('table');
+            var row = document.createElement('tr');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            td1.innerHTML = obj.title;
+            td2.innerHTML = obj.author;
+            td3.innerHTML = obj.numberOfPages;
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            table.children[0].appendChild(row);
+        }
+
         //Create Form variable
         const form = document.getElementById("contact-form");
 
+        
         //On submit event listener
         form.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -61,11 +82,13 @@
 
             //Add Object to myLibrary array
             addBookToLibrary(formDataObj);
+
+            addRow(formDataObj);
         });
         
-           
-
-           
+        
+              
+       
    
         
         
