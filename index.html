@@ -4,64 +4,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Library</title>
-
     <link rel="stylesheet" href="./style.css">
-    
-    
-    
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  
 </head>
+  
 <body>
-    <h1>Library</h1>
-
-    <p id="books"></p>
-    <button onClick="printLibrary()";>Show Books</button><br><br>
- 
-    <div class="tableContainer">
-        <table id="table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Number of Pages</th>
-                </tr>
-            </thead>
-            <tbody>
-                <td id="title"></td>
-                <td id="author"></td>
-                <td id="numberPages"></td>
-                <td><button>Edit</button></td>
-                <td><button>Delete</button></td>
-            </tbody>
-        </table>
+    <div class="header">
+  <h1 class="titleHeader">Library</h1>
+      
+      <button class="loginButton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+      <div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="./person-icon.png" alt="Avatar" class="avatar">
     </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required><br><br>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required><br><br>
+        
+      <button class="submit" type="submit">Login</button><br><br>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+
+  </form>
+
+</div>
+</div>
+  
+  <div class="title">
+  <h2>Books</h2>
+</div>
+  
+    <p id="books"></p>
+ <div>
+   <table id="books-list">
+      <thead id="book-requirements">
+        <tr>
+          <th>TITLE</th>
+          <th>AUTHOR</th>
+          <th>PAGES</th>
+          <th>STATUS</th>
+          <th>DELETE</th>
+          
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        
+      </tbody>
+     
+    </table>
+  </div><br>
+    
             <form id="contact-form">
     
                 <div class="form-control">
-                    <label for="name">Author</label>
-                    <input id="name" name="name" type="text" /><br>
+                   <h3> Add New Book </h3>
 
-                    <label for="title">Title</label>
+                    <label for="title">Title: </label>
                     <input id="title" name="title" type="text" /><br>
+                  
+                   <label for="author">Author: </label>
+                    <input id="author" name="author" type="text" /><br>
 
-                    <label for="numberPages">Number of Pages</label>
+                    <label for="numberPages">Number of Pages: </label>
                     <input id="numberPages" name="numberPages" type="text" /><br>
+                  
+                    <label for="status">Status: </label>
+                    <input id="status" name="status" type="checkbox" /> I have read this book<br>
                 </div>
     
-                <button class="btn" type="submit">Add Book</button>
+                <button class="btn-add" type="submit" onClick="showLibrary()">Add Book</button>
+                
+                <div class="output">
+            
+                    <pre class="output-pre">JSON content: </pre>
+                    <button id="btn" onClick="showLibrary()">Click to Display Added Books</button><br><br>
+                    
+                </div>
             </form>
         </div>
-        <div class="output">
-            
-            <pre class="output-pre"></pre>
-        </div>
-    
-    
 
-    <button id="btn" onClick="newBookForm()">Show/Hide Form</button>
+
+      
+ 
     
     </div>
-   
+    <button class="btn-show" onClick="newBookForm()">Show/Hide Form</button>
+
     <script src="./library.js"></script>
+
+
+    <footer class="footer">
+    <p>
+      Copyright ©
+      <script>
+        document.write(new Date().getFullYear())
+      </script>
+      jtphan-asu
+    </p>
+    <a href="https://github.com/jtphan-asu" target="_blank">
+      <i class="fab fa-github"></i
+    ></a>
+  </footer>
 </body>
 </html>
