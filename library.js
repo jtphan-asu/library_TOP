@@ -149,6 +149,7 @@ function validateLogin(){
         alert("Success Login information with admin");
         
         window.location.href = "https://jtphan-asu.github.io/library_TOP/success.html";
+        console.log("success.html?");
     } else {
         alert("Failed. Not admin account");
     }
