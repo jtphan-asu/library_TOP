@@ -143,3 +143,15 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+function validateLogin(){
+    if(document.getElementById("username").value === "admin" && document.getElementById("password").value === "password"){
+        alert("Success Login information with admin");
+        window.location = "success.html"; // Redirecting to other page.
+        return false;
+
+    } else {
+        alert("Failed. Not admin account");
+    }
+    
+}
